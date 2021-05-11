@@ -15,10 +15,21 @@
     "@angular/common": "~8.0.3",
     "@angular/compiler": "~8.0.3",
     "@angular/core": "~8.0.3",
+    "@angular/fire": "^5.4.2",
     "@angular/forms": "~8.0.3",
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^6.0.0",
+    "angular-gtag": "^1.0.4",
+    "chart.js": "^2.9.3",
+    "d3-array": "^2.12.1",
+    "devextreme-schematics": "^1.2.14",
+    "firebase": ">= 5.5.7 <8",
+    "jquery": "^3.6.0",
+    "ng2-charts": "^2.4.2",
+    "ngx-charts": "^3.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -32,6 +43,8 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.0.0",
+    "devextreme-cli": "latest",
+    "devextreme-themebuilder": "^20.2.4",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -42,6 +55,11 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
+    "firebase-tools": "^7.12.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1"
   }
 }

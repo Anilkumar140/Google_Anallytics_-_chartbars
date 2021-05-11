@@ -1,0 +1,511 @@
+#toast {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+#toast #img {
+  width: 50px;
+  height: 50px;
+
+  float: left;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  box-sizing: border-box;
+
+  background-color: #111;
+  color: #fff;
+}
+#toast #desc {
+  color: #fff;
+
+  padding: 16px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s,
+    fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s,
+    fadeout 0.5s 4.5s;
+}
+
+#toast1 {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+#toast1 #img {
+  width: 50px;
+  height: 50px;
+
+  float: left;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  box-sizing: border-box;
+
+  background-color: #111;
+  color: #fff;
+}
+#toast1 #desc {
+  color: #fff;
+
+  padding: 16px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+#toast1.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s,
+    fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s,
+    fadeout 0.5s 4.5s;
+}
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 60px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 60px;
+    opacity: 0;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+.column1 {
+  /* float: left; */
+  width: 26% !important;
+  padding: 10px !important;
+  height: 188px !important;
+  margin-left: 8% !important;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* for  x-axis labels */
+.parliaments {
+  font-size: x-small;
+  margin-left: 3.5rem;
+}
+
+.spaceRight {
+  margin-right: 0.3rem;
+  text-align: center;
+  max-width: 2rem;
+}
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+}
+.column {
+  float: left;
+  width: 65%;
+  padding: 10px;
+  height: 450px; /* Should be removed. Only for demonstration */
+}
+.column1 {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.main {
+  padding: 25px;
+  background: var(--background);
+  color: var(--on-background);
+}
+/* .innerdiv {
+  padding: 25px;
+  margin-top: 30px;
+  text-align: left;
+  position: relative;
+  background: var(--primary);
+  color: var(--on-primary);
+} */
+button {
+  margin-top: 20px;
+}
+h1 {
+  height: auto;
+  text-align: center;
+  margin: 0;
+  background: rgb(229, 36, 30);
+  color: var(--on-primary);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 11px;
+  margin: 0 5px;
+}
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ff0070;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.container1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0846a8;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.outer-lv3 {
+  background-image: linear-gradient(#870000, #ff4040, #870000);
+  height: 260px;
+  width: 260px;
+  -webkit-animation: turning 8s infinite linear;
+  animation: turning 8s infinite linear;
+}
+
+@-webkit-keyframes turning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes turning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.outer-lv2 {
+  background: #fff;
+  background-image: linear-gradient(#dbd9d9, #fafafa, #dbd9d9);
+  height: 210px;
+  width: 210px;
+}
+
+.outer-lv1 {
+  background-image: linear-gradient(#870000, #ff4040, #870000);
+  height: 150px;
+  width: 150px;
+}
+
+.center {
+  background-image: linear-gradient(#0846a8, #277aff, #0846a8);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.arrow {
+  border-top: 35px solid #ede8e8;
+  border-bottom: 48px solid rgba(0, 0, 0, 0);
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.top {
+  top: 35px;
+  left: 2px;
+}
+
+.left {
+  transform: rotate(72deg);
+  top: 16px;
+  left: -24px;
+}
+
+.right {
+  transform: rotate(-72deg);
+  top: 16px;
+  left: 25px;
+}
+.container2 {
+  margin-left: 7rem;
+}
+.checkbox:checked:before {
+  background-color: green;
+}
+.box {
+  float: left;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  clear: both;
+}
+
+.red {
+  background-color: #fb9eb3;
+}
+
+.green {
+  background-color: #82c4f1;
+}
+
+.blue {
+  background-color: #fbdf98;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column4 {
+  float: left;
+  margin-left: 9rem;
+  height: 63px;
+  width: 1rem;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* table,
+th,
+td {
+  border: 1px solid black;
+} */
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 155%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}

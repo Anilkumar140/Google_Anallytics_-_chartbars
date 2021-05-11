@@ -1,0 +1,398 @@
+<div app-theme>
+  <h1>Angular Chart Bar Testing</h1>
+  <div class="main container">
+    <label class="switch" style="margin-left: 86%">
+      <input type="checkbox" (click)="toggle()" />
+      <span class="slider round"></span>
+    </label>
+    <span> Dark Mode</span>
+
+    <div class="innerdiv">
+      <div class="row">
+        <div class="column">
+          <h2 *ngIf="show1">Graph</h2>
+          <!-- <button mat-button (click)="randomize()">Update</button> -->
+          <div
+            div
+            style="display: block; width: 791px; height: 400px"
+            *ngIf="show1"
+          >
+            <canvas
+              baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+            >
+            </canvas>
+          </div>
+          <div class="parliaments" *ngIf="show1">
+            <span class="spaceRight"> LEMBAH PENTAI </span>
+            <span class="spaceRight">SEGAMBUT </span
+            ><span class="spaceRight"> BATU</span>
+            <span class="spaceRight"> KEPONG </span>
+            <span class="spaceRight"> SEPUTEH</span>
+            <span class="spaceRight">BUKIT BINTANG </span>
+            <span class="spaceRight">BANDAR TUN RAZAK </span>
+            <span class="spaceRight">WANGSA MAJU </span
+            ><span class="spaceRight"> CHERAS</span>
+            <span class="spaceRight"> TITIWANGSA </span>
+            <span class="spaceRight">SETIAWANGSA</span>
+          </div>
+          <br />
+          <span style="margin-left: 40%" *ngIf="show1"> PARLIMEN</span>
+          <br />
+          <br />
+
+          <div class="row" *ngIf="show1">
+            <div
+              class="column4"
+              style="background-color: white"
+              *ngIf="catagorylength > 0"
+            >
+              <div>
+                <div class="box red"></div>
+                {{ firstCata1 | replaceSubstring: "_YA":"" }}
+              </div>
+            </div>
+            <div
+              class="column4"
+              style="background-color: white"
+              *ngIf="catagorylength > 1"
+            >
+              <div>
+                <div class="box green"></div>
+                {{ secondCata | replaceSubstring: "_YA":"" }}
+              </div>
+            </div>
+            <div
+              class="column4"
+              style="background-color: white"
+              *ngIf="catagorylength > 2"
+            >
+              <div>
+                <div class="box blue"></div>
+                {{ thirdcata | replaceSubstring: "_YA":"" }}<br />
+              </div>
+            </div>
+          </div>
+          <table id="customers" *ngIf="show1">
+            <tr colspan="4">
+              <th></th>
+              <th colspan="6 " style="text-align: center">KATEGORI</th>
+            </tr>
+
+            <tr colspan="3">
+              <td colspan="1"></td>
+              <td colspan="2" *ngFor="let header of catagoriList | slice: 0:3">
+                {{ header }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left; vertical-align: bottom">
+                PARLIAMEN
+              </td>
+              <td *ngIf="catagorylength > 0">YA</td>
+              <td *ngIf="catagorylength > 0">TIDAK</td>
+              <td *ngIf="catagorylength > 1">YA</td>
+              <td *ngIf="catagorylength > 1">TIDAK</td>
+              <td *ngIf="catagorylength > 2">YA</td>
+              <td *ngIf="catagorylength > 2">TIDAK</td>
+            </tr>
+            <!--  <td *ngFor="let data of jsondata; index as i">
+                {{ {{ data["LEMBAH PANTAI (P121)"][katagoriname] }}}}
+              </td> -->
+            <tr>
+              <td style="text-align: left">LEMBAH PENTAI</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[0]["LEMBAH PANTAI (P121)"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">SEGAMBUT</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[1]["SEGAMBUT"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[1]["SEGAMBUT"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[1]["SEGAMBUT"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[1]["SEGAMBUT"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[1]["SEGAMBUT"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[1]["SEGAMBUT"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">BATU</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[2]["BATU"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[2]["BATU"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[2]["BATU"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[2]["BATU"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[2]["BATU"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[2]["BATU"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">KEPONG</td>
+
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[3]["KEPONG"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[3]["KEPONG"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[3]["KEPONG"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[3]["KEPONG"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[3]["KEPONG"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[3]["KEPONG"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">SEPUTEH</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[4]["SEPUTEH"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[4]["SEPUTEH"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[4]["SEPUTEH"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[4]["SEPUTEH"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[4]["SEPUTEH"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[4]["SEPUTEH"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">BUKIT BITNAG</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[5]["BUKIT BINTANG"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[5]["BUKIT BINTANG"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[5]["BUKIT BINTANG"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[5]["BUKIT BINTANG"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[5]["BUKIT BINTANG"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[5]["BUKIT BINTANG"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">BANDAR TUN RAZAK</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[6]["BANDAR TUN RAZAK"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">WANGSA MAJU</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[7]["WANGSA MAJU"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[7]["WANGSA MAJU"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[7]["WANGSA MAJU"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[7]["WANGSA MAJU"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[7]["WANGSA MAJU"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[7]["WANGSA MAJU"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">CHERAS</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[8]["CHERAS"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[8]["CHERAS"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[8]["CHERAS"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[8]["CHERAS"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[8]["CHERAS"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[8]["CHERAS"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">TITIWANGSA</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[9]["TITIWANGSA"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[9]["TITIWANGSA"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[9]["TITIWANGSA"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[9]["TITIWANGSA"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[9]["TITIWANGSA"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[9]["TITIWANGSA"][thirdcata1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left">SETIAWANGSA</td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[10]["SETIAWANGSA"][firstCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 0">
+                {{ jsondata[10]["SETIAWANGSA"][firstCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[10]["SETIAWANGSA"][secondCata] }}
+              </td>
+              <td *ngIf="catagorylength > 1">
+                {{ jsondata[10]["SETIAWANGSA"][secondCata1] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[10]["SETIAWANGSA"][thirdcata] }}
+              </td>
+              <td *ngIf="catagorylength > 2">
+                {{ jsondata[10]["SETIAWANGSA"][thirdcata1] }}
+              </td>
+            </tr>
+          </table>
+
+          <br />
+          <br />
+        </div>
+        <div class="column1">
+          <h2>Parlimen</h2>
+
+          <input
+            class="form-control"
+            list="data"
+            placeholder="Sila pilih parlimen"
+            [(ngModel)]="selectedGuest"
+            (change)="getParliament()"
+            name="data"
+          />
+          <datalist id="data">
+            <option *ngFor="let data of parliamens" [value]="data"></option>
+          </datalist>
+
+          <h2><span i18n="@@location">Lapisan Fitur</span></h2>
+
+          <input
+            class="form-control"
+            list="data1"
+            placeholder="Nama jalan/ Nama taman"
+            name="data"
+            [(ngModel)]="selectedGuest1"
+            (change)="selectfeatureLayer()"
+          />
+          <datalist id="data1" #searchInput>
+            <option *ngFor="let data of featureLayers" [value]="data"></option>
+          </datalist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast">
+  <div id="img">Hey</div>
+  <div id="desc">Feature Layers Added In 2nd Dropdown</div>
+</div>
+<div id="toast1">
+  <div id="img">Nice</div>
+  <div id="desc">Scroll down to see the data in table</div>
+</div>
+<!-- <div class="container1" *ngIf="show">
+  <div class="circle outer-lv3">
+    <div class="circle outer-lv2">
+      <div class="circle outer-lv1">
+        <div class="center">
+          <div class="arrow top"></div>
+          <div class="arrow left"></div>
+          <div class="arrow right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<app-about *ngIf="show"></app-about>

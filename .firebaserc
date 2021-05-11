@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "anilks": {
+      "hosting": {
+        "DateTest": [
+          "anilks"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "anilks"
+  }
+}

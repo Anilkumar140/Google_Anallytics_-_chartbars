@@ -1,0 +1,91 @@
+<!-- Central Modal Success Demo -->
+<div
+  class="modal fade"
+  id="conditionModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!-- Content -->
+    <div class="modal-content">
+      <!-- Header -->
+      <div class="modal-header">
+        <p class="heading lead">Modal Success</p>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
+            iusto nulla aperiam blanditiis ad consequatur in dolores culpa,
+            dignissimos, eius non possimus fugiat. Esse ratione fuga, enim, ab
+            officiis totam.
+          </p>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-success"
+          >Get it now <i class="far fa-gem ml-1"></i
+        ></a>
+        <a
+          type="button"
+          class="btn btn-outline-success waves-effect"
+          data-dismiss="modal"
+          >No, thanks</a
+        >
+      </div>
+    </div>
+    <!-- Content -->
+  </div>
+</div>
+<!-- Central Modal Success Demo -->
+
+<!-- Card -->
+<div class="card p-3">
+  <div class="title text-center font-weight-bold h3">
+    <span
+      ><span style="color: #4285f4">G</span><span style="color: #ea4335">O</span
+      ><span style="color: #fbbc05">O</span><span style="color: #4285f4">G</span
+      ><span style="color: #34a853">L</span
+      ><span style="color: #ea4335">E</span></span
+    >
+    Analytics RealTime Report&nbsp; <button class="btn btn-primary" routerLink="/navigation" >View in chart bar</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>PagePath</th>
+        <th>PageViews</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let page of pageviews">
+        <td>
+          <a
+            class="trigger blue lighten-4"
+            data-toggle="modal"
+            data-target="#conditionModal"
+            >{{ page.date }}</a
+          >
+        </td>
+        <td>
+          <a class="trigger teal lighten-4">{{ page.Pageviews }}</a>
+          <a class="trigger info-color text-white color">Page views</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Card -->

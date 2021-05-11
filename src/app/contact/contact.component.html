@@ -1,0 +1,12 @@
+<h1>{{todaysDate | date }}</h1>
+<h2>{{ 'HELLO_WORLD.GREETING' | translate }}</h2>
+
+<p>{{ 'HELLO_WORLD.CHOOSE' | translate }}:
+	<select >
+    <option *ngFor="let languageCode of supportedLanguageCodes" 
+            [selected]="currentLanguageCode === languageCode"
+            [value]="languageCode">
+              {{ languageCode }}
+    </option>  
+  </select>
+</p>
